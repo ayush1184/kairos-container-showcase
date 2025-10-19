@@ -5,10 +5,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, CheckCircle, Star, Truck, Shield, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import residentialImage from "@/assets/residential-container.jpg";
+import Gallery from "@/components/Gallery";
+import model2HeroImage from "@/assets/models/model2/Kairos_Render_40x8x8_OfficeandStorage.57.jpg";
+import model2Image1 from "@/assets/models/model2/Kairos_Render_40x8x8_OfficeandStorage.59.jpg";
+import model2Image2 from "@/assets/models/model2/Kairos_Render_40x8x8_OfficeandStorage.62.jpg";
+import model2Image3 from "@/assets/models/model2/Kairos_Render_40x8x8_OfficeandStorage.65.jpg";
+import model2Image4 from "@/assets/models/model2/Kairos_Render_40x8x8_OfficeandStorage.70.jpg";
+import model2Image5 from "@/assets/models/model2/Kairos_Render_40x8x8_OfficeandStorage.73.jpg";
+import model2Video1 from "@/assets/models/model2/Kairos_Render_40x8x8_OfficeandStorage.53.mp4";
+import model2Video2 from "@/assets/models/model2/Kairos_Render_40x8x8_OfficeandStorage.54.mp4";
+import model2Video3 from "@/assets/models/model2/Kairos_Render_40x8x8_OfficeandStorage.55.mp4";
 
 const Model2 = () => {
     const navigate = useNavigate();
+
+    const images = [model2HeroImage, model2Image1, model2Image2, model2Image3, model2Image4, model2Image5];
+    const videos = [model2Video1, model2Video2, model2Video3];
 
     const features = [
         {
@@ -45,7 +57,7 @@ const Model2 = () => {
             <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src={residentialImage}
+                        src={model2HeroImage}
                         alt="Model 2 Container"
                         className="w-full h-full object-cover"
                     />
@@ -61,7 +73,7 @@ const Model2 = () => {
                             Model 2
                         </h1>
                         <p className="text-xl md:text-2xl text-white/90 mb-8 font-light">
-                            Commercial-grade container perfect for retail, office, and business applications
+                            40x8x8 Office and Storage - Commercial-grade container perfect for retail, office, and business applications
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Button
@@ -75,6 +87,7 @@ const Model2 = () => {
                                 size="lg"
                                 variant="outline"
                                 className="text-lg px-8 py-6 font-semibold bg-white/10 text-white border-white hover:bg-white hover:text-primary"
+                                onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
                             >
                                 View Gallery
                             </Button>
@@ -192,6 +205,9 @@ const Model2 = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Gallery Section */}
+            <Gallery images={images} videos={videos} modelName="Model 2" />
 
             <Footer />
         </div>

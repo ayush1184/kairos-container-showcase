@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import residentialImage from "@/assets/residential-container.jpg";
-import commercialImage from "@/assets/commercial-container.jpg";
-import heroImage from "@/assets/hero-container.jpg";
+import model1Image from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.46.jpg";
+import model2Image from "@/assets/models/model2/Kairos_Render_40x8x8_OfficeandStorage.57.jpg";
+import model3Image from "@/assets/models/model3/20x8x8Angle.77.jpg";
 
 const Models = () => {
   const navigate = useNavigate();
@@ -16,27 +16,24 @@ const Models = () => {
       name: "Model 1",
       badge: "Premium Model",
       description: "Premium residential container with modern amenities and luxury finishes",
-      image: heroImage,
-      features: ["Marine-grade Steel", "R-15 Insulation", "2 Large Windows", "Weather Resistant"],
-      price: "Starting at $45,000"
+      image: model1Image,
+      features: ["Marine-grade Steel", "R-15 Insulation", "2 Large Windows", "Weather Resistant"]
     },
     {
       id: "model-2",
       name: "Model 2",
       badge: "Business Model",
       description: "Commercial-grade container perfect for retail, office, and business applications",
-      image: residentialImage,
-      features: ["Commercial-grade Steel", "R-20 Insulation", "4 Large Windows", "Enhanced Security"],
-      price: "Starting at $65,000"
+      image: model2Image,
+      features: ["Commercial-grade Steel", "R-20 Insulation", "4 Large Windows", "Enhanced Security"]
     },
     {
       id: "model-3",
       name: "Model 3",
       badge: "Luxury Model",
       description: "Luxury container home with premium finishes and smart technology integration",
-      image: commercialImage,
-      features: ["Premium Steel + Wood", "R-25 Insulation", "6 Panoramic Windows", "Smart Technology"],
-      price: "Starting at $85,000"
+      image: model3Image,
+      features: ["Premium Steel + Wood", "R-25 Insulation", "6 Panoramic Windows", "Smart Technology"]
     }
   ];
 
@@ -73,7 +70,6 @@ const Models = () => {
                   </Badge>
                   <div className="absolute bottom-4 left-4 text-white">
                     <h3 className="text-2xl font-bold mb-1">{model.name}</h3>
-                    <p className="text-lg font-semibold text-primary-foreground/90">{model.price}</p>
                   </div>
                 </div>
                 <CardContent className="p-6">
@@ -108,7 +104,7 @@ const Models = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <img
-                src={residentialImage}
+                src={model1Image}
                 alt="Residential container home interior"
                 className="rounded-lg shadow-2xl w-full h-auto"
               />
@@ -201,7 +197,7 @@ const Models = () => {
             </div>
             <div>
               <img
-                src={commercialImage}
+                src={model2Image}
                 alt="Commercial container office space"
                 className="rounded-lg shadow-2xl w-full h-auto"
               />

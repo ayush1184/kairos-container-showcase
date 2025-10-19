@@ -5,10 +5,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, CheckCircle, Star, Truck, Shield, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import commercialImage from "@/assets/commercial-container.jpg";
+import Gallery from "@/components/Gallery";
+import model3HeroImage from "@/assets/models/model3/20x8x8Angle.77.jpg";
+import model3Image1 from "@/assets/models/model3/20x8x8Angle.79.jpg";
+import model3Image2 from "@/assets/models/model3/20x8x8Angle.81.jpg";
+import model3Image3 from "@/assets/models/model3/20x8x8Angle.86.jpg";
+import model3Image4 from "@/assets/models/model3/20x8x8Angle.92.jpg";
+import model3Image5 from "@/assets/models/model3/20x8x8Angle.94.jpg";
+import model3Video1 from "@/assets/models/model3/20x8x8video.74.mp4";
+import model3Video2 from "@/assets/models/model3/20x8x8video.75.mp4";
+import model3Video3 from "@/assets/models/model3/20x8x8video.95.mp4";
 
 const Model3 = () => {
     const navigate = useNavigate();
+
+    const images = [model3HeroImage, model3Image1, model3Image2, model3Image3, model3Image4, model3Image5];
+    const videos = [model3Video1, model3Video2, model3Video3];
 
     const features = [
         {
@@ -29,7 +41,7 @@ const Model3 = () => {
     ];
 
     const specifications = [
-        { label: "Dimensions", value: "40ft x 8ft x 9.5ft" },
+        { label: "Dimensions", value: "20ft x 8ft x 8.5ft" },
         { label: "Weight", value: "5,800 lbs" },
         { label: "Material", value: "Premium Steel + Wood" },
         { label: "Insulation", value: "R-25 Thermal" },
@@ -45,7 +57,7 @@ const Model3 = () => {
             <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src={commercialImage}
+                        src={model3HeroImage}
                         alt="Model 3 Container"
                         className="w-full h-full object-cover"
                     />
@@ -61,7 +73,7 @@ const Model3 = () => {
                             Model 3
                         </h1>
                         <p className="text-xl md:text-2xl text-white/90 mb-8 font-light">
-                            Luxury container home with premium finishes and smart technology integration
+                            20x8x8 Office - Luxury container home with premium finishes and smart technology integration
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Button
@@ -75,6 +87,7 @@ const Model3 = () => {
                                 size="lg"
                                 variant="outline"
                                 className="text-lg px-8 py-6 font-semibold bg-white/10 text-white border-white hover:bg-white hover:text-primary"
+                                onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
                             >
                                 View Gallery
                             </Button>
@@ -192,6 +205,9 @@ const Model3 = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Gallery Section */}
+            <Gallery images={images} videos={videos} modelName="Model 3" />
 
             <Footer />
         </div>

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import heroImage from "@/assets/hero-container.jpg";
-import residentialImage from "@/assets/residential-container.jpg";
-import commercialImage from "@/assets/commercial-container.jpg";
+import model1Image from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.46.jpg";
+import model2Image from "@/assets/models/model2/Kairos_Render_40x8x8_OfficeandStorage.57.jpg";
+import model3Image from "@/assets/models/model3/20x8x8Angle.77.jpg";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -11,17 +11,17 @@ const Hero = () => {
 
   const slides = [
     {
-      image: heroImage,
+      image: model1Image,
       title: "KAIROS CONTAINER",
       subtitle: "High Quality, Functional Spaces For Residential And Commercial Use"
     },
     {
-      image: residentialImage,
+      image: model2Image,
       title: "RESIDENTIAL SOLUTIONS",
       subtitle: "Transform containers into beautiful, livable homes with modern amenities"
     },
     {
-      image: commercialImage,
+      image: model3Image,
       title: "COMMERCIAL SPACES",
       subtitle: "Professional office spaces, retail shops, and pop-up stores for business"
     }

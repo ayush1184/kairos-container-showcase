@@ -5,10 +5,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, CheckCircle, Star, Truck, Shield, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import heroImage from "@/assets/hero-container.jpg";
+import Gallery from "@/components/Gallery";
+import model1HeroImage from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.46.jpg";
+import model1Image1 from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.47.jpg";
+import model1Image2 from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.48.jpg";
+import model1Image3 from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.49.jpg";
+import model1Image4 from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.50.jpg";
+import model1Image5 from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.51.jpg";
+import model1Video1 from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.37.mp4";
+import model1Video2 from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.38.mp4";
+import model1Video3 from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.43.mp4";
 
 const Model1 = () => {
     const navigate = useNavigate();
+
+    const images = [model1HeroImage, model1Image1, model1Image2, model1Image3, model1Image4, model1Image5];
+    const videos = [model1Video1, model1Video2, model1Video3];
 
     const features = [
         {
@@ -29,7 +41,7 @@ const Model1 = () => {
     ];
 
     const specifications = [
-        { label: "Dimensions", value: "20ft x 8ft x 8.5ft" },
+        { label: "Dimensions", value: "40ft x 8ft x 8.5ft" },
         { label: "Weight", value: "2,500 lbs" },
         { label: "Material", value: "Marine-grade Steel" },
         { label: "Insulation", value: "R-15 Thermal" },
@@ -45,7 +57,7 @@ const Model1 = () => {
             <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src={heroImage}
+                        src={model1HeroImage}
                         alt="Model 1 Container"
                         className="w-full h-full object-cover"
                     />
@@ -61,7 +73,7 @@ const Model1 = () => {
                             Model 1
                         </h1>
                         <p className="text-xl md:text-2xl text-white/90 mb-8 font-light">
-                            Premium residential container with modern amenities and luxury finishes
+                            40x8x8 Living Space - Premium residential container with modern amenities and luxury finishes
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Button
@@ -75,6 +87,7 @@ const Model1 = () => {
                                 size="lg"
                                 variant="outline"
                                 className="text-lg px-8 py-6 font-semibold bg-white/10 text-white border-white hover:bg-white hover:text-primary"
+                                onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
                             >
                                 View Gallery
                             </Button>
@@ -192,6 +205,9 @@ const Model1 = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Gallery Section */}
+            <Gallery images={images} videos={videos} modelName="Model 1" />
 
             <Footer />
         </div>
