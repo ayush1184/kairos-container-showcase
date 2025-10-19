@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-12">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
@@ -50,17 +50,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="font-bold mb-4">Services</h3>
-            <ul className="space-y-2">
-              <li className="text-sm opacity-80">Custom Design</li>
-              <li className="text-sm opacity-80">Modifications</li>
-              <li className="text-sm opacity-80">Delivery & Setup</li>
-              <li className="text-sm opacity-80">Consultation</li>
-            </ul>
-          </div>
-
           {/* Contact */}
           <div>
             <h3 className="font-bold mb-4">Contact</h3>
@@ -82,9 +71,14 @@ const Footer = () => {
 
         {/* Social & Copyright */}
         <div className="border-t border-primary-foreground/20 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm opacity-80 mb-4 md:mb-0">
-            © {currentYear} Kairos Container. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-2 mb-4 md:mb-0">
+            <p className="text-sm opacity-80">
+              © {currentYear} Kairos Container. All rights reserved.
+            </p>
+            <p className="text-xs opacity-60">
+              Made by Ayush Singh
+            </p>
+          </div>
           <div className="flex space-x-4">
             <a href="#" className="opacity-80 hover:opacity-100 transition-opacity">
               <Facebook className="w-5 h-5" />

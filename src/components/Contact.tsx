@@ -7,8 +7,10 @@ import { Mail, Phone, MapPin } from "lucide-react";
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
+    // Simple form submission - just show success message
     alert("Thank you! We'll be in touch soon.");
+    // Reset form
+    (e.target as HTMLFormElement).reset();
   };
 
   return (
@@ -65,18 +67,19 @@ const Contact = () => {
           <CardContent className="p-8">
             <h3 className="text-2xl font-bold text-primary mb-6">Request a Quote</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
                     Name *
                   </label>
-                  <Input id="name" required placeholder="Your name" />
+                  <Input id="name" name="name" required placeholder="Your name" />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2">
                     Email *
                   </label>
-                  <Input id="email" type="email" required placeholder="your@email.com" />
+                  <Input id="email" name="email" type="email" required placeholder="your@email.com" />
                 </div>
               </div>
 
@@ -85,14 +88,15 @@ const Contact = () => {
                   <label htmlFor="phone" className="block text-sm font-medium mb-2">
                     Phone
                   </label>
-                  <Input id="phone" type="tel" placeholder="(123) 456-7890" />
+                  <Input id="phone" name="phone" type="tel" placeholder="(123) 456-7890" />
                 </div>
                 <div>
-                  <label htmlFor="project-type" className="block text-sm font-medium mb-2">
+                  <label htmlFor="projectType" className="block text-sm font-medium mb-2">
                     Project Type *
                   </label>
                   <select
-                    id="project-type"
+                    id="projectType"
+                    name="projectType"
                     required
                     className="w-full px-3 py-2 border border-input rounded-md bg-background"
                   >
@@ -110,6 +114,7 @@ const Contact = () => {
                 </label>
                 <Textarea
                   id="message"
+                  name="message"
                   required
                   placeholder="Tell us about your project..."
                   rows={6}
