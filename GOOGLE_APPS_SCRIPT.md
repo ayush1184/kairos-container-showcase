@@ -79,7 +79,7 @@ function testFunction() {
   const testData = {
     timestamp: new Date().toISOString(),
     name: 'Test User',
-    email: 'rburris@rabur.com',
+    email: 'ralph@rabur.com',
     phone: '(281)-772-4800',
     projectType: 'residential',
     message: 'This is a test message'

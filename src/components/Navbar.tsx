@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -12,6 +12,7 @@ const Navbar = () => {
   const [isShrunk, setIsShrunk] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isProductsHovered, setIsProductsHovered] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const navItems = useMemo(() => [
     { name: "Home", href: "#home", id: "home" },
@@ -27,6 +28,23 @@ const Navbar = () => {
     { name: "Model 2", href: "/model-2", id: "model-2" },
     { name: "Model 3", href: "/model-3", id: "model-3" },
   ];
+
+  // Handle click outside dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsProductsHovered(false);
+      }
+    };
+
+    if (isProductsHovered) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isProductsHovered]);
 
   // Handle scroll events for navbar background and active section
   useEffect(() => {
@@ -169,6 +187,7 @@ const Navbar = () => {
 
             {/* Products Dropdown */}
             <div
+              ref={dropdownRef}
               className="relative"
               onMouseEnter={() => setIsProductsHovered(true)}
               onMouseLeave={() => setIsProductsHovered(false)}
@@ -176,6 +195,7 @@ const Navbar = () => {
               <button
                 className={`nav-link rounded-lg font-medium transition-all duration-500 flex items-center space-x-1 ${isShrunk && !isHovered ? 'px-3 py-1.5 text-sm' : 'px-4 py-2'
                   } text-foreground hover:text-primary hover:bg-primary/5`}
+                onClick={() => setIsProductsHovered(!isProductsHovered)}
               >
                 <span>Models</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isProductsHovered ? 'rotate-180' : ''}`} />
@@ -183,7 +203,7 @@ const Navbar = () => {
 
               {/* Dropdown Menu */}
               {isProductsHovered && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50 animate-slide-down">
+                <div className="absolute top-full left-0 mt-1 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2 z-[60] animate-slide-down">
                   {productItems.map((item) => (
                     <button
                       key={item.name}
@@ -193,10 +213,11 @@ const Navbar = () => {
                         } else {
                           navigate(item.href);
                         }
+                        setIsProductsHovered(false);
                       }}
-                      className={`w-full text-left px-4 py-2 text-sm transition-colors duration-200 ${activeSection === item.id
+                      className={`w-full text-left px-4 py-2 text-sm transition-colors duration-200 hover:bg-primary/5 ${activeSection === item.id
                         ? 'text-primary bg-primary/10'
-                        : 'text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-primary/5'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-primary'
                         }`}
                     >
                       {item.name}

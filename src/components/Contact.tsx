@@ -95,6 +95,15 @@ const Contact = () => {
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    // Submit form when Enter is pressed (but not Shift+Enter for new lines)
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      const formEvent = e as unknown as React.FormEvent<HTMLFormElement>;
+      handleSubmit(formEvent);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -213,8 +222,8 @@ const Contact = () => {
                 <Mail className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-bold text-xl mb-2">Email</h3>
-              <a href="mailto:rburris@rabur.com" className="text-muted-foreground hover:text-primary transition-colors">
-                rburris@rabur.com
+              <a href="mailto:ralph@rabur.com" className="text-muted-foreground hover:text-primary transition-colors">
+                ralph@rabur.com
               </a>
             </CardContent>
           </Card>
@@ -345,6 +354,7 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
+                  onKeyDown={handleKeyDown}
                   placeholder="Tell us about your project..."
                   rows={6}
                   disabled={isSubmitting}

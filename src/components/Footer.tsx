@@ -78,8 +78,8 @@ const Footer = () => {
                 </a>
               </li>
               <li className="text-sm opacity-80">
-                <a href="mailto:rburris@rabur.com" className="hover:opacity-100 transition-opacity">
-                  rburris@rabur.com
+                <a href="mailto:ralph@rabur.com" className="hover:opacity-100 transition-opacity">
+                  ralph@rabur.com
                 </a>
               </li>
               <li className="text-sm opacity-80">Houston,TX</li>
