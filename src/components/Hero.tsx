@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import model1Image from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.46.jpg";
 import model2Image from "@/assets/models/model2/Kairos_Render_40x8x8_OfficeandStorage.57.jpg";
@@ -27,18 +27,7 @@ const Hero = () => {
     }
   ];
 
-  // Auto-play functionality
-  useEffect(() => {
-    if (!isAutoPlaying || isTransitioning) return;
-
-    const interval = setInterval(() => {
-      goToNext();
-    }, 6000);
-
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, isTransitioning]);
-
-  const goToSlide = (index: number, direction: 'left' | 'right' = 'right') => {
+  const goToSlide = useCallback((index: number, direction: 'left' | 'right' = 'right') => {
     if (isTransitioning || index === currentSlide) return;
 
     setIsTransitioning(true);
@@ -50,17 +39,28 @@ const Hero = () => {
       setIsTransitioning(false);
       setTimeout(() => setIsAutoPlaying(true), 8000);
     }, 1200);
-  };
+  }, [isTransitioning, currentSlide]);
 
-  const goToPrevious = () => {
-    const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-    goToSlide(prevIndex, 'left');
-  };
-
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     const nextIndex = (currentSlide + 1) % slides.length;
     goToSlide(nextIndex, 'right');
-  };
+  }, [currentSlide, slides.length, goToSlide]);
+
+  const goToPrevious = useCallback(() => {
+    const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+    goToSlide(prevIndex, 'left');
+  }, [currentSlide, slides.length, goToSlide]);
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (!isAutoPlaying || isTransitioning) return;
+
+    const interval = setInterval(() => {
+      goToNext();
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, isTransitioning, goToNext]);
 
 
   return (

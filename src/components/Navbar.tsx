@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -13,13 +13,13 @@ const Navbar = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isProductsHovered, setIsProductsHovered] = useState(false);
 
-  const navItems = [
+  const navItems = useMemo(() => [
     { name: "Home", href: "#home", id: "home" },
     { name: "Products", href: "#products", id: "products" },
     { name: "Our Process", href: "#process", id: "process" },
     { name: "About Us", href: "#about", id: "about" },
     { name: "Contact", href: "#contact", id: "contact" },
-  ];
+  ], []);
 
   const productItems = [
     { name: "View All Models", href: "#products", id: "products", isScroll: true },
@@ -191,7 +191,7 @@ const Navbar = () => {
                         if (item.isScroll) {
                           scrollToSection(item.id);
                         } else {
-                          window.location.href = item.href;
+                          navigate(item.href);
                         }
                       }}
                       className={`w-full text-left px-4 py-2 text-sm transition-colors duration-200 ${activeSection === item.id
@@ -283,7 +283,7 @@ const Navbar = () => {
                         if (item.isScroll) {
                           scrollToSection(item.id);
                         } else {
-                          window.location.href = item.href;
+                          navigate(item.href);
                         }
                       }}
                       className={`nav-link text-left px-3 py-2 rounded-lg text-sm transition-all duration-500 text-foreground hover:text-primary hover:bg-primary/5`}

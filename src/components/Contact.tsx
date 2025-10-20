@@ -43,8 +43,8 @@ const Contact = () => {
 
   const validatePhone = (phone: string): boolean => {
     if (!phone) return true; // Phone is optional
-    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-    return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
+    const phoneRegex = /^[+]?[1-9]\d{0,15}$/;
+    return phoneRegex.test(phone.replace(/[\s\-()]/g, ''));
   };
 
   const validateForm = (): boolean => {
