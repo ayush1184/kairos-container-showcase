@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
@@ -91,13 +94,20 @@ const Navbar = () => {
 
   // Smooth scroll function
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offsetTop = element.offsetTop - 80; // Account for navbar height
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
+    // Check if we're on the home page
+    if (location.pathname === '/') {
+      // We're on home page, just scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offsetTop = element.offsetTop - 80; // Account for navbar height
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      // We're on a model page, navigate to home first
+      navigate('/', { state: { scrollTo: sectionId } });
     }
     setIsOpen(false);
   };
@@ -119,7 +129,13 @@ const Navbar = () => {
           }`}>
           {/* Logo */}
           <button
-            onClick={() => scrollToSection('home')}
+            onClick={() => {
+              if (location.pathname === '/') {
+                scrollToSection('home');
+              } else {
+                navigate('/');
+              }
+            }}
             className="flex items-center space-x-2 group transition-all duration-500 hover:scale-105"
           >
             <div className={`bg-gradient-to-br from-primary to-primary/80 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-500 ${isShrunk && !isHovered ? 'w-8 h-8' : 'w-10 h-10'

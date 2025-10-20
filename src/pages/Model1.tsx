@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, CheckCircle, Star, Truck, Shield, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 import Gallery from "@/components/Gallery";
 import model1HeroImage from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.46.jpg";
 import model1Image1 from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.47.jpg";
@@ -18,6 +19,7 @@ import model1Video3 from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpac
 
 const Model1 = () => {
     const navigate = useNavigate();
+    useScrollToTop(); // Scroll to top when component mounts
 
     const images = [model1HeroImage, model1Image1, model1Image2, model1Image3, model1Image4, model1Image5];
     const videos = [model1Video1, model1Video2, model1Video3];
@@ -80,6 +82,7 @@ const Model1 = () => {
                                 size="lg"
                                 variant="secondary"
                                 className="text-lg px-8 py-6 font-semibold"
+                                onClick={() => navigate('/', { state: { scrollTo: 'contact' } })}
                             >
                                 Get Quote
                             </Button>
@@ -190,6 +193,7 @@ const Model1 = () => {
                             size="lg"
                             variant="secondary"
                             className="text-lg px-8 py-6 font-semibold"
+                            onClick={() => navigate('/', { state: { scrollTo: 'contact' } })}
                         >
                             Contact Us
                         </Button>
