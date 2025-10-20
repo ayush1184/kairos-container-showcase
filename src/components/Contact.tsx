@@ -183,8 +183,26 @@ const Contact = () => {
                 <Phone className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-bold text-xl mb-2">Phone</h3>
-              <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                (123) 456-7890
+              <a href="tel:+2817724800" className="text-muted-foreground hover:text-primary transition-colors">
+                <svg
+                  className="h-5 w-32 inline-block"
+                  viewBox="0 0 150 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }}
+                >
+                  <text
+                    x="0"
+                    y="15"
+                    fontFamily="monospace"
+                    fontSize="14"
+                    fontWeight="500"
+                    fill="currentColor"
+                    style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }}
+                  >
+                    (281)-772-4800
+                  </text>
+                </svg>
               </a>
             </CardContent>
           </Card>
@@ -195,8 +213,8 @@ const Contact = () => {
                 <Mail className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-bold text-xl mb-2">Email</h3>
-              <a href="mailto:info@kairoscontainer.com" className="text-muted-foreground hover:text-primary transition-colors">
-                info@kairoscontainer.com
+              <a href="mailto:rburris@rabur.com" className="text-muted-foreground hover:text-primary transition-colors">
+                rburris@rabur.com
               </a>
             </CardContent>
           </Card>
@@ -208,7 +226,7 @@ const Contact = () => {
               </div>
               <h3 className="font-bold text-xl mb-2">Location</h3>
               <p className="text-muted-foreground">
-                Serving Nationwide
+                Houston,TX
               </p>
             </CardContent>
           </Card>
@@ -287,7 +305,7 @@ const Contact = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="(123) 456-7890"
+                    placeholder="(281)-772-4800"
                     disabled={isSubmitting}
                     className={errors.phone ? "border-red-500" : ""}
                   />

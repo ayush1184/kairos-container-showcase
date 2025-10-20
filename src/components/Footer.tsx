@@ -55,16 +55,34 @@ const Footer = () => {
             <h3 className="font-bold mb-4">Contact</h3>
             <ul className="space-y-2">
               <li className="text-sm opacity-80">
-                <a href="tel:+1234567890" className="hover:opacity-100 transition-opacity">
-                  (123) 456-7890
+                <a href="tel:+2817724800" className="hover:opacity-100 transition-opacity">
+                  <svg
+                    className="h-4 w-32 inline-block"
+                    viewBox="0 0 150 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }}
+                  >
+                    <text
+                      x="0"
+                      y="15"
+                      fontFamily="monospace"
+                      fontSize="12"
+                      fontWeight="500"
+                      fill="currentColor"
+                      style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }}
+                    >
+                      (281)-772-4800
+                    </text>
+                  </svg>
                 </a>
               </li>
               <li className="text-sm opacity-80">
-                <a href="mailto:info@kairoscontainer.com" className="hover:opacity-100 transition-opacity">
-                  info@kairoscontainer.com
+                <a href="mailto:rburris@rabur.com" className="hover:opacity-100 transition-opacity">
+                  rburris@rabur.com
                 </a>
               </li>
-              <li className="text-sm opacity-80">Serving Nationwide</li>
+              <li className="text-sm opacity-80">Houston,TX</li>
             </ul>
           </div>
         </div>

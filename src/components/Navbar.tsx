@@ -221,6 +221,7 @@ const Navbar = () => {
                 viewBox="0 0 150 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }}
               >
                 <text
                   x="0"
@@ -229,8 +230,9 @@ const Navbar = () => {
                   fontSize="14"
                   fontWeight="500"
                   fill="currentColor"
+                  style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }}
                 >
-                  (281) 772 4800
+                  (281)-772-4800
                 </text>
               </svg>
             </a>
@@ -303,6 +305,7 @@ const Navbar = () => {
                     viewBox="0 0 150 20"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }}
                   >
                     <text
                       x="0"
@@ -311,8 +314,9 @@ const Navbar = () => {
                       fontSize="14"
                       fontWeight="500"
                       fill="currentColor"
+                      style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }}
                     >
-                      (281) 772 4800
+                      (281)-772-4800
                     </text>
                   </svg>
                 </a>
