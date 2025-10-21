@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo, useRef } from "react";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
+import logoImage from "@/assets/kairos-containers.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -154,19 +155,13 @@ const Navbar = () => {
                 navigate('/');
               }
             }}
-            className="flex items-center space-x-2 group transition-all duration-500 hover:scale-105"
+            className="flex items-center group transition-all duration-500 hover:scale-105"
           >
-            <div className={`bg-gradient-to-br from-primary to-primary/80 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-500 ${isShrunk && !isHovered ? 'w-8 h-8' : 'w-10 h-10'
-              }`}>
-              <span className={`text-primary-foreground font-bold transition-all duration-500 ${isShrunk && !isHovered ? 'text-lg' : 'text-xl'
-                }`}>K</span>
-            </div>
-            <div className="flex flex-col">
-              <span className={`font-bold text-primary group-hover:text-primary/80 transition-all duration-500 ${isShrunk && !isHovered ? 'text-lg' : 'text-xl'
-                }`}>KAIROS</span>
-              <span className={`text-muted-foreground tracking-wider transition-all duration-500 ${isShrunk && !isHovered ? 'text-[10px]' : 'text-xs'
-                }`}>CONTAINER</span>
-            </div>
+            <img
+              src={logoImage}
+              alt="KAIROS Containers"
+              className={`transition-all duration-500 ${isShrunk && !isHovered ? 'h-8' : 'h-10'} object-contain`}
+            />
           </button>
 
           {/* Desktop Navigation */}

@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import logoImage from "@/assets/kairos-containers.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,13 +11,11 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-secondary rounded flex items-center justify-center">
-                <span className="text-secondary-foreground font-bold text-xl">K</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-lg">KAIROS</span>
-                <span className="text-xs tracking-wider opacity-80">CONTAINER</span>
-              </div>
+              <img
+                src={logoImage}
+                alt="KAIROS Containers"
+                className="h-10 object-contain"
+              />
             </div>
             <p className="text-sm opacity-80">
               Transforming shipping containers into exceptional living and working spaces.
