@@ -14,26 +14,26 @@ const Models = () => {
     {
       id: "model-1",
       name: "Model 1",
-      badge: "Premium Model",
+      badge: "Residential 40 Model",
       description: "Premium residential container with modern amenities and luxury finishes",
       image: model1Image,
-      features: ["Marine-grade Steel", "R-15 Insulation", "2 Large Windows", "Weather Resistant"]
+      features: ["Marine grade steel", "High quality closed cell spray foam insulation", "Energy efficient doors and windows", "Smart Technology", "Weather Resistant"]
     },
     {
       id: "model-2",
       name: "Model 2",
-      badge: "Business Model",
+      badge: "Office - Storage Model",
       description: "Commercial-grade container perfect for retail, office, and business applications",
       image: model2Image,
-      features: ["Commercial-grade Steel", "R-20 Insulation", "4 Large Windows", "Enhanced Security"]
+      features: ["Marine grade steel", "High quality closed cell spray foam insulation", "Energy efficient doors and windows", "Smart Technology", "Weather Resistant"]
     },
     {
       id: "model-3",
       name: "Model 3",
-      badge: "Luxury Model",
-      description: "Luxury container home with premium finishes and smart technology integration",
+      badge: "Office - Restroom 20 Model",
+      description: "Luxury container office with premium finishes and smart technology integration",
       image: model3Image,
-      features: ["Premium Steel + Wood", "R-25 Insulation", "6 Panoramic Windows", "Smart Technology"]
+      features: ["Marine grade steel", "High quality closed cell spray foam insulation", "Energy efficient doors and windows", "Smart Technology", "Weather Resistant"]
     }
   ];
 
@@ -44,10 +44,10 @@ const Models = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              Our Container Models
+              Our Container Model Samples
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Choose from our range of premium container solutions designed for different needs and budgets
+              Choose from our range of container solutions designs or let your imagination go and we will design and build your exact needs
             </p>
           </div>
 
@@ -95,116 +95,29 @@ const Models = () => {
               </Card>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Residential Section */}
-      <section id="residential" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <img
-                src={model1Image}
-                alt="Residential container home interior"
-                className="rounded-lg shadow-2xl w-full h-auto"
-              />
-            </div>
-            <div className="order-1 lg:order-2">
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-                Residential Models
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Transform your vision of a perfect home into reality with our custom residential
-                container solutions. From cozy tiny homes to spacious multi-container estates,
-                we create comfortable, modern living spaces that are both sustainable and stylish.
-              </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                    <span className="text-secondary-foreground text-sm">✓</span>
-                  </div>
-                  <span className="text-foreground">Custom floor plans tailored to your lifestyle</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                    <span className="text-secondary-foreground text-sm">✓</span>
-                  </div>
-                  <span className="text-foreground">Premium insulation for year-round comfort</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                    <span className="text-secondary-foreground text-sm">✓</span>
-                  </div>
-                  <span className="text-foreground">Modern finishes and high-quality materials</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                    <span className="text-secondary-foreground text-sm">✓</span>
-                  </div>
-                  <span className="text-foreground">Energy-efficient windows and doors</span>
-                </li>
-              </ul>
-              <Button size="lg" asChild>
-                <a href="#contact">Request Residential Quote</a>
-              </Button>
-            </div>
+          {/* Quote Request Button */}
+          <div className="text-center mt-16">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-md hover:shadow-lg transition-all duration-500 px-8 py-4 text-lg"
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  const offsetTop = contactSection.offsetTop - 80; // Account for navbar height
+                  window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
+            >
+              Request Your Container Quote
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Commercial Section */}
-      <section id="commercial" className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-                Commercial Models
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Elevate your business with our innovative commercial container solutions.
-                Perfect for offices, retail spaces, cafes, and pop-up shops, our containers
-                offer flexible, cost-effective alternatives to traditional commercial real estate.
-              </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                    <span className="text-secondary-foreground text-sm">✓</span>
-                  </div>
-                  <span className="text-foreground">Professional workspace design and layout</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                    <span className="text-secondary-foreground text-sm">✓</span>
-                  </div>
-                  <span className="text-foreground">Climate control and electrical systems</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                    <span className="text-secondary-foreground text-sm">✓</span>
-                  </div>
-                  <span className="text-foreground">Scalable solutions that grow with your business</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                    <span className="text-secondary-foreground text-sm">✓</span>
-                  </div>
-                  <span className="text-foreground">Quick installation with minimal disruption</span>
-                </li>
-              </ul>
-              <Button size="lg" asChild>
-                <a href="#contact">Request Commercial Quote</a>
-              </Button>
-            </div>
-            <div>
-              <img
-                src={model2Image}
-                alt="Commercial container office space"
-                className="rounded-lg shadow-2xl w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 };

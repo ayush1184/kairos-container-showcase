@@ -12,18 +12,18 @@ const Hero = () => {
   const slides = [
     {
       image: model1Image,
-      title: "KAIROS CONTAINER",
-      subtitle: "High Quality, Functional Spaces For Residential And Commercial Use"
+      title: "RESIDENTIAL HOUSING SOLUTIONS",
+      subtitle: "High Quality, Functional Spaces For Residential Use Including livable Homes and Cabins"
     },
     {
       image: model2Image,
-      title: "RESIDENTIAL SOLUTIONS",
-      subtitle: "Transform containers into beautiful, livable homes with modern amenities"
+      title: "STORAGE AND OFFICE SOLUTIONS",
+      subtitle: "Transform containers into storage facilities or office and storage together."
     },
     {
       image: model3Image,
-      title: "COMMERCIAL SPACES",
-      subtitle: "Professional office spaces, retail shops, and pop-up stores for business"
+      title: "COMMERCIAL AND OFFICE SPACES",
+      subtitle: "Professional Office Spaces, Retail Shops, Pop-up Stores, Ticket Booths, Control Rooms, Restrooms, Food Service and More"
     }
   ];
 

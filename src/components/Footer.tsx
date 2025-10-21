@@ -93,9 +93,6 @@ const Footer = () => {
             <p className="text-sm opacity-80">
               © {currentYear} Kairos Container. All rights reserved.
             </p>
-            <p className="text-xs opacity-60">
-              Made by Ayush Singh
-            </p>
           </div>
           <div className="flex space-x-4">
             <a href="#" className="opacity-80 hover:opacity-100 transition-opacity">
