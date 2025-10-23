@@ -54,7 +54,7 @@ const Footer = () => {
             <h3 className="font-bold mb-4">Contact</h3>
             <ul className="space-y-2">
               <li className="text-sm opacity-80">
-                <a href="tel:+2817724800" className="hover:opacity-100 transition-opacity">
+                <a href="tel:+2816999000" className="hover:opacity-100 transition-opacity">
                   <svg
                     className="h-4 w-32 inline-block"
                     viewBox="0 0 150 20"
@@ -71,7 +71,7 @@ const Footer = () => {
                       fill="currentColor"
                       style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }}
                     >
-                      (281)-772-4800
+                      (281)-699-9000
                     </text>
                   </svg>
                 </a>

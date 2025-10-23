@@ -80,7 +80,7 @@ function testFunction() {
     timestamp: new Date().toISOString(),
     name: 'Test User',
     email: 'ralph@rabur.com',
-    phone: '(281)-772-4800',
+    phone: '(281)-699-9000',
     projectType: 'residential',
     message: 'This is a test message'
   };

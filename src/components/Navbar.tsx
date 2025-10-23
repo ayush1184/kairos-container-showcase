@@ -226,7 +226,7 @@ const Navbar = () => {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="tel:+2817724800"
+              href="tel:+2816999000"
               className={`flex items-center space-x-2 text-foreground hover:text-primary transition-all duration-500 hover:bg-primary/5 rounded-lg ${isShrunk && !isHovered ? 'px-2 py-1.5' : 'px-3 py-2'
                 }`}
             >
@@ -248,7 +248,7 @@ const Navbar = () => {
                   fill="currentColor"
                   style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }}
                 >
-                  (281)-772-4800
+                  (281)-699-9000
                 </text>
               </svg>
             </a>
@@ -312,7 +312,7 @@ const Navbar = () => {
 
               <div className="pt-4 border-t border-border/50">
                 <a
-                  href="tel:+2817724800"
+                  href="tel:+2816999000"
                   className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-primary/5"
                 >
                   <Phone className="w-4 h-4" />
@@ -332,7 +332,7 @@ const Navbar = () => {
                       fill="currentColor"
                       style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }}
                     >
-                      (281)-772-4800
+                      (281)-699-9000
                     </text>
                   </svg>
                 </a>

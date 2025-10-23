@@ -192,7 +192,7 @@ const Contact = () => {
                 <Phone className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-bold text-xl mb-2">Phone</h3>
-              <a href="tel:+2817724800" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="tel:+2816999000" className="text-muted-foreground hover:text-primary transition-colors">
                 <svg
                   className="h-5 w-32 inline-block"
                   viewBox="0 0 150 20"
@@ -209,7 +209,7 @@ const Contact = () => {
                     fill="currentColor"
                     style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }}
                   >
-                    (281)-772-4800
+                    (281)-699-9000
                   </text>
                 </svg>
               </a>
@@ -314,7 +314,7 @@ const Contact = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="(281)-772-4800"
+                    placeholder="(281)-699-9000"
                     disabled={isSubmitting}
                     className={errors.phone ? "border-red-500" : ""}
                   />
