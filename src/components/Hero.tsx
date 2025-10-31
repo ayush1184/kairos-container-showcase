@@ -3,6 +3,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import model1Image from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.46.jpg";
 import model2Image from "@/assets/models/model2/Kairos_Render_40x8x8_OfficeandStorage.57.jpg";
 import model3Image from "@/assets/models/model3/20x8x8Angle.77.jpg";
+import standardUnitsImage1 from "@/assets/models/standard-units/40ft-High-Cube-New-beige.webp";
+import standardUnitsImage2 from "@/assets/models/standard-units/20 n1t beige standard.jpg";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -24,6 +26,16 @@ const Hero = () => {
       image: model3Image,
       title: "COMMERCIAL AND OFFICE SPACES",
       subtitle: "Professional Office Spaces, Retail Shops, Pop-up Stores, Ticket Booths, Control Rooms, Restrooms, Food Service and More"
+    },
+    {
+      image: standardUnitsImage1,
+      title: "STANDARD UNITS",
+      subtitle: "Available in 20ft and 40ft High Cube configurations with multiple color options - perfect for storage, transport, and customization projects"
+    },
+    {
+      image: standardUnitsImage2,
+      title: "STANDARD UNITS",
+      subtitle: "High-quality standard shipping containers in various sizes and colors, ideal for commercial and residential applications"
     }
   ];
 

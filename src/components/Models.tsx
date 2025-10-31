@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 import model1Image from "@/assets/models/model1/Kairos_Render_40x8x8_LivingSpace.46.jpg";
 import model2Image from "@/assets/models/model2/Kairos_Render_40x8x8_OfficeandStorage.57.jpg";
 import model3Image from "@/assets/models/model3/20x8x8Angle.77.jpg";
+import standardUnitsImage from "@/assets/models/standard-units/40ft-High-Cube-New-beige.webp";
 
 const Models = () => {
   const navigate = useNavigate();
@@ -34,6 +35,14 @@ const Models = () => {
       description: "Luxury container office with premium finishes and smart technology integration",
       image: model3Image,
       features: ["Marine grade steel", "High quality closed cell spray foam insulation", "Energy efficient doors and windows", "Smart Technology", "Weather Resistant"]
+    },
+    {
+      id: "standard-units",
+      name: "Standard Units",
+      badge: "Standard Units",
+      description: "High-quality standard shipping containers available in 20ft and 40ft High Cube configurations with multiple color options",
+      image: standardUnitsImage,
+      features: ["Marine grade steel", "Available in 20ft and 40ft High Cube", "Multiple color options (Grey, Beige, Black)", "Standard shipping container certification", "Easy stacking and transportation"]
     }
   ];
 
@@ -51,11 +60,11 @@ const Models = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {models.map((model, index) => (
               <Card
                 key={model.id}
-                className="group hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer border-2 hover:border-primary/20"
+                className="group hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer border-2 hover:border-primary/20 flex flex-col h-full"
                 onClick={() => navigate(`/${model.id}`)}
               >
                 <div className="relative h-64 overflow-hidden">
@@ -72,11 +81,11 @@ const Models = () => {
                     <h3 className="text-2xl font-bold mb-1">{model.name}</h3>
                   </div>
                 </div>
-                <CardContent className="p-6">
+                <CardContent className="p-6 flex flex-col flex-1">
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {model.description}
                   </p>
-                  <div className="space-y-2 mb-6">
+                  <div className="space-y-2 mb-6 flex-1">
                     {model.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -85,7 +94,7 @@ const Models = () => {
                     ))}
                   </div>
                   <Button
-                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
+                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 mt-auto"
                     variant="outline"
                   >
                     View Details

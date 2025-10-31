@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Model1 from "./pages/Model1";
 import Model2 from "./pages/Model2";
 import Model3 from "./pages/Model3";
+import StandardUnits from "./pages/StandardUnits";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/model-1" element={<Model1 />} />
           <Route path="/model-2" element={<Model2 />} />
           <Route path="/model-3" element={<Model3 />} />
+          <Route path="/standard-units" element={<StandardUnits />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

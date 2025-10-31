@@ -28,6 +28,7 @@ const Navbar = () => {
     { name: "Model 1", href: "/model-1", id: "model-1" },
     { name: "Model 2", href: "/model-2", id: "model-2" },
     { name: "Model 3", href: "/model-3", id: "model-3" },
+    { name: "Standard Units", href: "/standard-units", id: "standard-units" },
   ];
 
   // Handle click outside dropdown
